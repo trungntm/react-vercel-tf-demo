@@ -24,6 +24,6 @@ jobs:
 
       - name: Terraform Apply
         working-directory: ./deploy
-        run: terraform apply -auto-approve
+        run: terraform apply --auto-approve
         env:
           vercel_api_token: ${{ secrets.VERCEL_API_TOKEN }}
