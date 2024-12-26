@@ -19,9 +19,11 @@ jobs:
           terraform_version: 1.10.3 # Specify the Terraform version
 
       - name: Terraform Init
+        working-directory: ./deploy
         run: terraform init
 
       - name: Terraform Apply
+        working-directory: ./deploy
         run: terraform apply -auto-approve
         env:
-          TF_VAR_vercel_api_token: ${{ secrets.VERCEL_API_TOKEN }}
+          vercel_api_token: ${{ secrets.VERCEL_API_TOKEN }}
